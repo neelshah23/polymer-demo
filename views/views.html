@@ -10,100 +10,105 @@
 </head>
 <body unresolved class="fullbleed layout vertical">
 <dom-module id="iauro-app">
-<link rel="import" type="css" href="app.css">
-<template>
+    <link rel="import" type="css" href="app.css">
+    <style>
+        paper-material {
+            padding: 20px 0;
+        }
+    </style>
+    <template>
 
-    <paper-drawer-panel id="drawerPanel" responsive-width="2024px">
+        <paper-drawer-panel id="drawerPanel" responsive-width="2024px">
 
-        <div class="nav" drawer>
-            <paper-header-panel  mode="seamed">
-                <paper-toolbar tool flex>
+            <div class="nav" drawer>
+                <paper-header-panel  mode="seamed">
+                    <paper-toolbar tool flex>
                         <span>Menu</span>
-                </paper-toolbar>
-                <paper-menu>
+                    </paper-toolbar>
+                    <paper-menu>
 
-                </paper-menu>
-            </paper-header-panel>
-            <!-- Nav Content -->
-        </div>
+                    </paper-menu>
+                </paper-header-panel>
+                <!-- Nav Content -->
+            </div>
 
-        <paper-header-panel class="main" main mode="seamed">
+            <paper-header-panel class="main" main mode="seamed">
 
-            <!-- Main Toolbar -->
-            <paper-toolbar  tool flex>
-                <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                <!-- Main Toolbar -->
+                <paper-toolbar  tool flex>
+                    <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
                     <span flex>
                             CLIENTS
                         </span>
-            </paper-toolbar>
+                </paper-toolbar>
 
 
-            <!-- Main Content -->
-            <div class="content mainData fit">
-                <paper-material class="clientList">
-                    <paper-menu >
-                        <iron-ajax
-                                auto
-                                id="ajax"
-                                url="{{url}}"
-                                handle-as="json"
-                                last-response="{{data}}"
-                                on-response="newsResponse"
-                                debounce-duration="30000">
-                        </iron-ajax>
+                <!-- Main Content -->
+                <div class="content mainData fit">
+                    <paper-material class="clientList">
+                        <paper-menu >
+                            <iron-ajax
+                                    auto
+                                    id="ajax"
+                                    url="{{url}}"
+                                    handle-as="json"
+                                    last-response="{{data}}"
+                                    on-response="newsResponse"
+                                    debounce-duration="30000">
+                            </iron-ajax>
 
-                        <template is="dom-repeat"  items="{{data}}" >
-                            <paper-item on-tap="updateUserScreen">
-                                <iron-icon icon="account-circle" style="color: gray;height:40px;width:40px;"></iron-icon>
-                                <span class="userName">{{item.name}}</span>
-                                <input type="hidden">
-                            </paper-item>
-                        </template>
+                            <template is="dom-repeat"  items="{{data}}" >
+                                <paper-item on-tap="updateUserScreen">
+                                    <iron-icon icon="account-circle" style="color: gray;height:40px;width:40px;"></iron-icon>
+                                    <span class="userName">{{item.name}}</span>
+                                    <input type="hidden">
+                                </paper-item>
+                            </template>
 
-                    </paper-menu>
-                    <paper-fab on-tap="newUserScreen"  class="addClient" mini icon="add"></paper-fab>
+                        </paper-menu>
+                        <paper-fab on-tap="newUserScreen"  class="addClient" mini icon="add"></paper-fab>
 
 
-                </paper-material>
-            </div>
+                    </paper-material>
+                </div>
 
-        </paper-header-panel>
+            </paper-header-panel>
 
-    </paper-drawer-panel>
+        </paper-drawer-panel>
 
-</template>
+    </template>
 
-<script>
-    Polymer({
-        is: 'iauro-app',
-        properties:{
-            url:{
-                value:"http://192.168.1.174/healthcard-demo/api/client.php",
-                notify:true
+    <script>
+        Polymer({
+            is: 'iauro-app',
+            properties:{
+                url:{
+                    value:"http://192.168.1.174/healthcard-demo/api/client.php",
+                    notify:true
+                }
+            },
+            updateUserScreen:function(e){
+                $.cookie("userId", e.model.item.id);
+                window.location.href="userDetails.html";
+            },
+            newUserScreen:function(e){
+                $.cookie("userId", -1);
+                window.location.href="userDetails.html";
             }
-        },
-        updateUserScreen:function(e){
-            $.cookie("userId", e.model.item.id);
-            window.location.href="userDetails.html";
-        },
-        newUserScreen:function(e){
-            $.cookie("userId", -1);
-            window.location.href="userDetails.html";
+
+        });
+    </script>
+    <script>
+        var h=w=0;
+
+        $(window).on("resize load", getHeightOfBody);
+        function getHeightOfBody() {
+            h=window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
+            w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            $('.mainData').height(h - 105).width(w);
         }
 
-    });
-</script>
-<script>
-    var h=w=0;
-
-    $(window).on("resize load", getHeightOfBody);
-    function getHeightOfBody() {
-        h=window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
-        w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        $('.mainData').height(h - 105).width(w);
-    }
-
-</script>
+    </script>
 
 </dom-module>
 </body>

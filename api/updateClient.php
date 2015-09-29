@@ -18,7 +18,7 @@ if($con->connect_errno > 0){
 
 $userId = $_POST['id'];
 if($userId>0){
-$sql = "REPLACE INTO clientList
+    $sql = "REPLACE INTO clientList
           SET name=\"".$_POST['name']."\",
           email=\"".$_POST['email']."\",
           mobile=\"".$_POST['mobile']."\",
@@ -46,17 +46,3 @@ while($resp = $result->fetch_assoc()) {
     $res[] = $resp;
 }
 echo json_encode($res);
-
-//// mysqli
-//$con = mysqli_connect($servername,$username, $password);
-//mysqli_select_db($con, $dbname);
-//$res = mysqli_query($con, $sql);
-//
-//while($resp = mysqli_fetch_array($res))
-//{
-//    print_r($resp);
-//}
-//
-//mysqli_close($con);
-
-
