@@ -57,6 +57,8 @@
     </template>
 
     <script>
+        var link = "http://api.iauro.com/neel/polymer-demo/";
+        //        var link = "http://localhost/polymer-demo/";
         Polymer({
             is: 'addUser-app',
             goBacktoHome:function(e){
@@ -84,7 +86,7 @@
                         "id": $.cookie("userId")
                     };
 
-                    this.$.ajax1.url = "http://192.168.1.174/healthcard-demo/api/findClient.php";
+                    this.$.ajax1.url = link+"api/findClient.php";
                     this.$.ajax1.body = (body);
                     this.$.ajax1.generateRequest();
                 }
@@ -102,7 +104,7 @@
                 };
 
                 console.log(body);
-                this.$.ajax1.url = "http://192.168.1.174/healthcard-demo/api/updateClient.php";
+                this.$.ajax1.url = "api/updateClient.php";
                 this.$.ajax1.body = (body);
                 this.$.ajax1.generateRequest();
                 if($.cookie("userId") > 0) {

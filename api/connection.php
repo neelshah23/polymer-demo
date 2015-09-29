@@ -6,7 +6,7 @@
  * Time: 9:43 AM
  */
 
-
+header('Access-Control-Allow-Origin: *');
 $servername = "localhost";
 $username = "root";
 $password = "iauro100";
