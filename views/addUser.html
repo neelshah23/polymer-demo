@@ -40,12 +40,12 @@
                 <!-- Main Content -->
                 <div class="content fit">
                     <paper-material class="clientList">
-                        <paper-input type="text" label="Name" id="Name"  value="{{data.name}}" auto-validate pattern="[a-zA-Z]*" error-message="letters only!"></paper-input>
+                        <paper-input type="text" label="Name" id="Name"  value="{{data.name}}" auto-validate pattern="[a-zA-Z ]*" error-message="letters only!"></paper-input>
                         <paper-input type="email" label="Email" auto-validate  label="email" error-message="Please enter valid email" id="Email" value="{{data.email}}"></paper-input>
                         <paper-input type="text" label="Mobile" id="Mobile" value="{{data.mobile}}" char-counter auto-validate pattern="[0-9]*" maxlength="10" error-message="Numbers only!"></paper-input>
                         <paper-input type="text" label="Address" id="Address" value="{{data.address}}"></paper-input>
-                        <paper-input type="text" label="Locality" id="Locality" value="{{data.locality}}" auto-validate pattern="[a-zA-Z]*" error-message="letters only!"></paper-input>
-                        <paper-input type="text" label="city" id="city" value="{{data.city}}" auto-validate pattern="[a-zA-Z]*" error-message="letters only!"></paper-input>
+                        <paper-input type="text" label="Locality" id="Locality" value="{{data.locality}}" auto-validate pattern="[a-zA-Z ]*" error-message="letters only!"></paper-input>
+                        <paper-input type="text" label="city" id="city" value="{{data.city}}" auto-validate pattern="[a-zA-Z ]*" error-message="letters only!"></paper-input>
                         <paper-toast text="Your draft has been discarded." id="ResultMessage"></paper-toast>
                     </paper-material>
                 </div>

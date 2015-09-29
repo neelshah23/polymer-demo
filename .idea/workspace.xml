@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="091defec-b971-4a04-8eec-b24c2be63b8c" name="Default" comment="simple polymer-demo">
+    <list default="true" id="091defec-b971-4a04-8eec-b24c2be63b8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addUser.html" afterPath="$PROJECT_DIR$/views/addUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,8 +29,8 @@
       <file leaf-file-name="addUser.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/addUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3993174" vertical-offset="540" max-vertical-offset="2682">
-              <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.98293513" vertical-offset="540" max-vertical-offset="2682">
+              <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#paper-icon-button#1;n#paper-toolbar#0;n#paper-header-panel#0;n#paper-drawer-panel#0;n#template#0;n#dom-module#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -493,7 +493,7 @@
       <workItem from="1443440122467" duration="11048000" />
       <workItem from="1443499946939" duration="924000" />
       <workItem from="1443501640425" duration="23596000" />
-      <workItem from="1443529284601" duration="7262000" />
+      <workItem from="1443529284601" duration="7439000" />
     </task>
     <task id="LOCAL-00001" summary="simple polymer-demo">
       <created>1443534846646</created>
@@ -503,11 +503,15 @@
       <created>1443536881443</created>
       <updated>1443536881443</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="form validation">
+      <created>1443537597826</created>
+      <updated>1443537597826</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45969000" />
+    <option name="totallyTimeSpent" value="46146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="24" width="1327" height="744" extended-state="6" />
@@ -560,7 +564,8 @@
     </option>
     <MESSAGE value="simple polymer-demo" />
     <MESSAGE value="added allow origin" />
-    <option name="LAST_COMMIT_MESSAGE" value="added allow origin" />
+    <MESSAGE value="form validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="form validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -869,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/addUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3993174" vertical-offset="540" max-vertical-offset="2682">
-          <caret line="43" column="69" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.98293513" vertical-offset="540" max-vertical-offset="2682">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#paper-icon-button#1;n#paper-toolbar#0;n#paper-header-panel#0;n#paper-drawer-panel#0;n#template#0;n#dom-module#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
