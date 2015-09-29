@@ -1,0 +1,51 @@
+{
+  "name": "healthcard-demo",
+  "version": "0.0.0",
+  "authors": [
+    "root <neel.shah@iauro.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "cw-moment": "cletusw/cw-moment#master",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.0.4",
+    "iron-dropdown": "PolymerElements/iron-dropdown#~1.0.5",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.3",
+    "iron-icon": "polymerelements/iron-icon#^1.0.0",
+    "iron-icons": "polymerelements/iron-icons#^1.0.0",
+    "iron-selector": "polymerelements/iron-selector#^1.0.0",
+    "paper-card": "PolymerElements/paper-card#~1.0.4",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.3",
+    "paper-dropdown-menu": "Polymer/paper-dropdown-menu#~0.5.6",
+    "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.5",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.3",
+    "paper-item": "polymerelements/paper-item#^1.0.0",
+    "paper-material": "polymerelements/paper-material#^1.0.0",
+    "paper-menu": "polymerelements/paper-menu#^1.0.0",
+    "paper-menu-button": "PolymerElements/paper-menu-button#~1.0.3",
+    "paper-spinner": "PolymerElements/paper-spinner#~1.0.2",
+    "paper-styles": "polymerelements/paper-styles#^1.0.0",
+    "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
+    "sc-timeago": "*",
+    "paper-input": "PolymerElements/paper-input#~1.0.14",
+    "paper-toast": "PolymerElements/paper-toast#~1.0.0",
+    "paper-dialog": "PolymerElements/paper-dialog#~1.0.1",
+    "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#~1.0.5",
+    "jquery": "jQuery#~2.1.4",
+    "jquery.cookie": "~1.4.1",
+    "paper-fab": "PolymerElements/paper-fab#~1.0.4",
+    "core-ajax": "Polymer/core-ajax#~0.5.6"
+  }
+}

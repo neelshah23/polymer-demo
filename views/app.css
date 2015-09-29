@@ -1,0 +1,108 @@
+:root {
+    /* Label and underline color when the input is focused */
+    --paper-input-container-focus-color: #aaa3a3;
+    /*--paper-input-container-underline-focus-color:#42A5F5;*/
+    /* Label and underline color when the input is invalid */
+    --paper-input-container-invalid-color: #ff4634;
+
+    /* Input foreground color */
+    --paper-input-container-input-color: black;
+    --paper-input-container-label-focus: black;
+
+    --dark-primary-color: #303F9F;
+    --default-primary-color: #3F51B5;
+    --light-primary-color: #C5CAE9;
+    --text-primary-color: #ffffff; /*text/icons*/
+    --accent-color: #f3ffe5;
+    --primary-background-color: #c5cae9;
+    --primary-text-color: #212121;
+    --secondary-text-color: #727272;
+    --disabled-text-color: #bdbdbd;
+    --divider-color: #B6B6B6;
+
+    /* Components */
+
+    /* paper-drawer-panel */
+    --drawer-menu-color: #ffffff;
+    --drawer-border-color: 1px solid #ccc;
+    --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
+
+    /* paper-menu */
+    --paper-menu-background-color: #fff;
+    --menu-link-color: #111111;
+    --paper-fab-background:grey;
+    --paper-fab-keyboard-focus-background:grey;
+
+
+}
+.paper-menu > .iron-selected {
+    color: var(--default-primary-color);
+}
+:host {
+    display: block;
+    font-family: "Roboto-Thin", sans-serif;
+
+}
+paper-input{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.nav {
+    border-right: 1px solid #ccc;
+}
+
+.main {
+    background-color: #eee;
+}
+
+paper-input /deep/ .focused-underline {
+                       /* line color when the input is focused */
+                       background-color: #aaa3a3;
+                   }
+paper-toolbar {
+    background-color: #666;
+}
+
+
+
+paper-material {
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+}
+paper-menu paper-item {
+    text-decoration: none;
+    color: var(--menu-link-color);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    min-height: 60px;
+    padding: 0 16px;
+}
+.userName{
+    color:#666;
+    margin-left: 1em;
+}
+.addClient{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.mainData{
+    height: 100%;
+    /*overflow: hidden;*/
+}
+

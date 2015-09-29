@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Polymer</title>
+    <link href="../bower_components/paper-fab/paper-fab.html" rel="import">
+
+    <link rel="import" href="my-imports.html" />
+
+
+</head>
+<body unresolved class="fullbleed fit" >
+<dom-module id="addUser-app" layout horizontal center-center fit>
+    <link rel="import" type="css" href="app.css">
+<template>
+    <iron-ajax
+            id="ajax1"
+            method="POST"
+            handleAs="json"
+            headers='{"Content-Type": "application/x-www-form-urlencoded"}'
+            body='{}'
+            last-response="{{data1}}"
+            on-response="newsResponse"
+            debounce-duration="">
+    </iron-ajax>
+
+
+    <paper-drawer-panel class="content fit" id="drawerPanel" responsive-width="2024px">
+
+        <paper-header-panel class="main" main mode="seamed">
+
+            <!-- Main Toolbar -->
+            <paper-toolbar>
+                <paper-icon-button on-tap="goBacktoHome" icon="icons:close"></paper-icon-button>
+                <span>DETAILS</span>
+                <paper-icon-button on-tap="updateData" right icon="icons:save" style="float: right;right: 0;position: absolute;padding: 1em;"></paper-icon-button>
+            </paper-toolbar>
+
+
+            <!-- Main Content -->
+            <div class="content fit">
+                <paper-material class="clientList">
+                    <paper-input type="text" label="Name" id="Name"  value="{{data.name}}"></paper-input>
+                    <paper-input type="email" label="Email" id="Email" value="{{data.email}}"></paper-input>
+                    <paper-input type="text" label="Mobile" id="Mobile" value="{{data.mobile}}"></paper-input>
+                    <paper-input type="text" label="Address" id="Address" value="{{data.address}}"></paper-input>
+                    <paper-input type="text" label="Locality" id="Locality" value="{{data.locality}}"></paper-input>
+                    <paper-input type="text" label="city" id="city" value="{{data.city}}"></paper-input>
+                    <paper-toast text="Your draft has been discarded." id="ResultMessage"></paper-toast>
+                </paper-material>
+            </div>
+
+        </paper-header-panel>
+
+    </paper-drawer-panel>
+
+</template>
+
+<script>
+    Polymer({
+        is: 'addUser-app',
+        goBacktoHome:function(e){
+            $.cookie("userId",-1);
+            window.location.href="index.html";
+        },
+        properties:{
+            url:{
+                computed: 'computeUrl()'
+//                value:"http://localhost/healthcard-demo/api/client.php",
+//                notify:true
+            }
+        },
+
+        ready: function(){
+            console.log("Ready...");
+            this.setData();
+            this.data = {};
+
+        },
+        created: function() {
+
+        },
+        setData: function() {
+            if($.cookie("userId") && $.cookie("userId")>0) {
+                var body = {
+                    "id": $.cookie("userId")
+                };
+
+                this.$.ajax1.url = "http://192.168.1.174/healthcard-demo/api/findClient.php";
+                this.$.ajax1.body = (body);
+                this.$.ajax1.generateRequest();
+            }
+
+        },
+        updateData: function(e){
+            var body = {
+                "id": $.cookie("userId"),
+                "name": this.data.name,
+                "email": this.data.email,
+                "mobile": this.data.mobile,
+                "address": this.data.address,
+                "locality": this.data.locality,
+                "city": this.data.city
+            };
+
+            console.log(body);
+            this.$.ajax1.url = "http://192.168.1.174/healthcard-demo/api/updateClient.php";
+            this.$.ajax1.body = (body);
+            this.$.ajax1.generateRequest();
+            if($.cookie("userId") > 0) {
+                showToast("successfully updated user");
+            }
+            else{    showToast("successfully added user");}
+            setTimeout(function(){
+                window.location.href = "index.html";
+            },2000);
+        },
+
+        newsResponse:function(e){
+            this.data = e.detail.response[0];
+        }
+
+    });
+</script>
+<script>
+    function showToast(text){
+        $("#ResultMessage").attr("text",text);
+        document.querySelector("#ResultMessage").show();
+
+    }
+
+    var h=w=0;
+
+    $(window).on("resize load", getHeightOfBody);
+    function getHeightOfBody() {
+        h=window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
+        w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        $('.mainData').height(h - 105).width(w);
+    }
+
+</script>
+
+</dom-module>
+</body></html>
